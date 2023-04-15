@@ -1,0 +1,27 @@
+.userInfo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	flex-direction: column;
+	gap: 10px;
+
+	input {
+		padding: 10px;
+		width: 200px;
+		outline: none;
+		border: none;
+	}
+
+	button {
+		border: none;
+		cursor: pointer;
+		background-color: teal;
+		color: white;
+		padding: 10px;
+		width: 100px;
+		border-radius: 5px;
+		font-weight: 500;
+	}
+}

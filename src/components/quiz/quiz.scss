@@ -1,0 +1,97 @@
+@import "../../global.scss";
+
+.quiz {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	.question {
+		background: linear-gradient(#100241, black);
+		text-align: center;
+		padding: 20px;
+		border-radius: 10px;
+		border: 2px solid white;
+		font-size: 20px;
+
+		@include mobile {
+			padding: 18px 4px;
+		}
+	}
+
+	.answers {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include minimobile {
+			margin-top: -6px;
+		}
+
+		.answer {
+			width: 40%;
+			padding: 10px;
+			margin: 0 10px 20px 10px;
+			text-align: center;
+			background: linear-gradient(#0e0124, #22074d);
+			border: 1px solid white;
+			border-radius: 15px;
+			font-weight: 300;
+			font-size: 20px;
+			cursor: pointer;
+
+			@include minimobile {
+				width: 90%;
+				padding: 8px;
+				margin-bottom: 6px;
+			}
+
+			&:hover,
+			&.active {
+				background: mediumblue;
+			}
+
+			&.correct {
+				animation: correct 3s ease forwards;
+			}
+
+			@keyframes correct {
+				0%,
+				22%,
+				42% {
+					background: mediumblue;
+				}
+				20%,
+				40%,
+				60% {
+					background: linear-gradient(#0e0124, #22074d);
+				}
+				62%,
+				100% {
+					background: green;
+				}
+			}
+
+			&.wrong {
+				animation: wrong 3s ease forwards;
+			}
+
+			@keyframes wrong {
+				0%,
+				22%,
+				42% {
+					background: mediumblue;
+				}
+				20%,
+				40%,
+				60% {
+					background: linear-gradient(#0e0124, #22074d);
+				}
+				62%,
+				100% {
+					background: crimson;
+				}
+			}
+		}
+	}
+}

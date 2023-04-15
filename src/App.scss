@@ -1,0 +1,125 @@
+@import "./global.scss";
+
+.app {
+	height: 100vh;
+	background-color: #020230;
+	color: white;
+	display: flex;
+
+	@include mobile {
+		flex-direction: column-reverse;
+	}
+
+	.main {
+		width: 75%;
+		height: 100%;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230),
+			url("../src/assets/quizbg.jpg") center;
+		display: flex;
+		flex-direction: column;
+
+		.endText {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 150px;
+		}
+
+		@include mobile {
+			width: 100%;
+		}
+
+		.top {
+			height: 50%;
+			position: relative;
+
+			@include mobile {
+				height: 20%;
+			}
+
+			.timer {
+				position: absolute;
+				top: 10px;
+				left: 20px;
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: 5px solid white;
+				font-size: 30px;
+				font-weight: 700;
+
+				@include mobile {
+					height: 50px;
+					width: 50px;
+					font-weight: 500;
+					border: 3px solid white;
+					font-size: 24px;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+				}
+			}
+		}
+
+		.bottom {
+			height: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@include mobile {
+				height: 80%;
+			}
+		}
+	}
+
+	.moneyPyramid {
+		width: 25%;
+		background-color: #020230;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include mobile {
+			width: 100%;
+			margin: 20px 4px;
+		}
+
+		ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			@include mobile {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			.item {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				padding: 4px;
+				border-radius: 5px;
+
+				&.active {
+					background-color: teal;
+				}
+
+				.key {
+					font-weight: 300;
+				}
+
+				.value {
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
