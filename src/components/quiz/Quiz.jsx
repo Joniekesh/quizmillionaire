@@ -20,12 +20,6 @@ const Quiz = ({ data, questionNumber, setQuestionNumber, setStop }) => {
 		}, duration);
 	};
 
-	// useEffect(() => {
-	// 	if (data[questionNumber] === 2) {
-	// 		setStop(true);
-	// 	}
-	// }, [data, questionNumber]);
-
 	useEffect(() => {
 		letsPlay();
 	}, [letsPlay]);

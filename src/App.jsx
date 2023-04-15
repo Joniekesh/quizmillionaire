@@ -2,32 +2,27 @@ import { useState, useMemo, useEffect } from "react";
 import "./App.scss";
 import Quiz from "./components/quiz/Quiz";
 import Timer from "./components/Timer";
-import axios from "axios";
+// import axios from "axios";
 import UserInfo from "./components/userInfo/UserInfo";
 
 const App = () => {
 	const [questionNumber, setQuestionNumber] = useState(0);
 	const [stop, setStop] = useState(false);
-	const [questions, setQuestions] = useState([]);
+	// const [questions, setQuestions] = useState([]);
 	const [username, setUsername] = useState("");
 	const [earned, setEarned] = useState("$ 0");
 
-	useEffect(() => {
-		const fetchQuestions = async () => {
-			const res = await axios.get(
-				"https://the-trivia-api.com/api/questions?limit=10"
-			);
+	// useEffect(() => {
+	// 	const fetchQuestions = async () => {
+	// 		const res = await axios.get(
+	// 			"https://the-trivia-api.com/api/questions?limit=10"
+	// 		);
 
-			setQuestions(res.data);
-		};
+	// 		setQuestions(res.data);
+	// 	};
 
-		fetchQuestions();
-	}, []);
-
-	const currentQuestion = questions[questionNumber];
-
-	// console.log(questions);
-	// console.log(currentQuestion);
+	// 	fetchQuestions();
+	// }, []);
 
 	const data = [
 		{
